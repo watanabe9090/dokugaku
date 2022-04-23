@@ -14,8 +14,15 @@ class ParagraphServicesTest {
 
     @Test
     void CreateParagraph__WhenParametersAreOk() {
-        Paragraph paragraphToBeCreated = new Paragraph();
+        Paragraph paragraphToBeCreated = new Paragraph("TEST--TITLE", "TEST--CONTENT");
         Paragraph paragraphCreated = paragraphServices.save(paragraphToBeCreated);
         assertNotNull(paragraphCreated.getId());
+    }
+
+    @Test
+    void RetrieveParagraph__WhenIdExists() {
+        Paragraph paragraphToBeCreated = new Paragraph("TEST--TITLE", "TEST--CONTENT");
+        Paragraph paragraphCreated = paragraphServices.save(paragraphToBeCreated);
+        Paragraph paragraphRetrieved = paragraphServices.getById(paragraphCreated.getId());
     }
 }
