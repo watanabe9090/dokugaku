@@ -14,5 +14,8 @@ public class ParagraphServices {
         return paragraph;
     }
 
-
+    public Paragraph getById(Long id) {
+        Paragraph paragraph = repository.getById(id);
+        return paragraph;
+    }
 }
